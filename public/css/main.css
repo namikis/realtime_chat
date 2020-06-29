@@ -1,0 +1,9 @@
+html,body,div,h1,h2,h3,h4,h5,form,p{
+    margin:0;
+    padding:0;
+}
+
+.container{
+    width:1170px;
+    margin:100px auto;
+}

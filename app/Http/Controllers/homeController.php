@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 class homeController extends Controller
 {
-    public function index(){
-        return view('index');
+    public function top(){
+        $loginInfo = session('loginInfo');
+        return view('top')->with('loginInfo', $loginInfo);
     }
 }

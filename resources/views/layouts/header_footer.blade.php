@@ -19,6 +19,10 @@
                 <div class="header_right_item">
                     <a href="/signUp">新規登録</a>
                 </div>
+            @else
+                 <div class="header_right_item">
+                    <a href="/logout">ログアウト</a>
+                </div>
             @endif
         </div>
     </div>

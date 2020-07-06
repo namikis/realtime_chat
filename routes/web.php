@@ -25,3 +25,5 @@ Route::get('/logout', 'loginController@logout');
 Route::get('/index', 'postController@index');
 Route::get('/index/post', 'postController@post_form');
 Route::post('/index/post', 'postController@post_done');
+
+Route::get('/index/post/detail', 'postController@post_detail');

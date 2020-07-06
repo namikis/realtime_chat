@@ -31,6 +31,15 @@ class postController extends Controller
         $data['user_id'] = $loginInfo['user_id'];
 
         Post::insertPost($data);
-        redirect('/index');
+        return redirect('/index');
+    }
+
+    public function post_detail(Request $request){
+        
+        $post_id = $request->id;
+        $post = Post::getById($post_id);
+
+        return view('post_detail')
+            ->with('post', $post);
     }
 }

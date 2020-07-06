@@ -21,8 +21,24 @@ class Post extends Model
         ";
         $posts = DB::table('posts')
             ->select(DB::raw($select))
+            ->where('user_id', '!=', $user_id)
             ->get();
         
         return $posts;
+    }
+
+    public static function getById($id){
+        $select = "
+            id,
+            post_title,
+            post_text,
+            user_id
+        ";
+        $post = DB::table('posts')
+            ->select(DB::raw($select))
+            ->where('id', '=', $id)
+            ->first();
+        
+        return $post;
     }
 }

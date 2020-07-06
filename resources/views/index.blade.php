@@ -32,5 +32,18 @@
         min-height:200px;
         margin:30px;
         background-color:rgba(0, 0, 255, 0.2);
+        padding:20px 0;
+    }
+
+    .post_item{
+        margin:10px 15px;
+        border:2px solid red;
+        border-radius:5px;
+        padding:10px 5px;
+    }
+
+    .post_item a{
+        font-size:20px;
+        color:black;
     }
 </style>

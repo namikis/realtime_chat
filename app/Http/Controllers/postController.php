@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\Post;
+use App\Model\Chat;
 
 class postController extends Controller
 {

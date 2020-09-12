@@ -27,3 +27,4 @@ Route::get('/index/post', 'postController@post_form');
 Route::post('/index/post', 'postController@post_done');
 
 Route::get('/index/post/detail', 'postController@post_detail');
+Route::post('/index/post/match', 'chatController@post_match');

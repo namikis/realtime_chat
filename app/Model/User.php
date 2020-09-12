@@ -30,4 +30,12 @@ class User extends Model
 
         return $user;
     }
+
+    public static function getById($user_id){
+        $user = DB::table('users')
+                    ->where('id', '=', $user_id)
+                    ->first();
+
+        return $user;
+    }
 }

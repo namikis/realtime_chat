@@ -9,7 +9,9 @@
         </div>
         <div class="matching">
             <form action="/index/post/match" method="post">
-                <input type="hidden" value="{{$post->user_id}}">
+                {{ csrf_field() }}
+                <input type="hidden" value="{{$post->id}}" name="post_id"> 
+                <input type="hidden" value="{{$post->user_id}}" name="opp_id">
                 <input type="submit" value="チャットする">
             </form>
         </div>

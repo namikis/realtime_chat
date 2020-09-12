@@ -6,7 +6,7 @@
         <div class="post_wrapper">
             @foreach($posts as $post)
                 <div class="post_item">
-                    <a href="/index/post/detail?id={{$post->id}}">{{ $post->post_title }}</a>
+                    <a href="/index/post/detail?id={{$post->id}}"><span class="post_title">{{ $post->post_title }}</span> host : {{ $post->name }}</a>
                 </div>
             @endforeach
         </div>
@@ -45,5 +45,11 @@
     .post_item a{
         font-size:20px;
         color:black;
+    }
+
+    .post_title{
+        font-size:22px;
+        font-weight:bold;
+        padding:10%;
     }
 </style>

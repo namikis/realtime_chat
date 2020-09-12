@@ -14,12 +14,14 @@ class Post extends Model
 
     public static function getPosts($user_id){
         $select = "
-            id,
-            post_title,
-            post_text,
-            user_id
+            posts.id,
+            posts.post_title,
+            posts.post_text,
+            posts.user_id,
+            users.name
         ";
         $posts = DB::table('posts')
+            ->join('users', 'users.id', '=', 'posts.user_id')
             ->select(DB::raw($select))
             ->where('user_id', '!=', $user_id)
             ->get();

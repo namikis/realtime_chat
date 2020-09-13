@@ -24,7 +24,13 @@ Route::get('/logout', 'loginController@logout');
 
 Route::get('/index', 'postController@index');
 Route::get('/index/post', 'postController@post_form');
+Route::get('/post/mine', 'postController@post_mine');
+
 Route::post('/index/post', 'postController@post_done');
 
-Route::get('/index/post/detail', 'postController@post_detail');
+Route::get('/index/post/detail/{id}', 'postController@post_detail');
+Route::get('/index/post/detail/mine/{id}', 'postController@post_detail_mine');
+
 Route::post('/index/post/match', 'chatController@post_match');
+Route::get('/post/match/list', 'chatController@post_list');
+Route::get('/chat', 'chatController@chat_room');

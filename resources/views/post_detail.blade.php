@@ -7,14 +7,25 @@
                 <p>{{ $post->post_text }}</p>
             </div>
         </div>
+        @if($type=="other")
         <div class="matching">
             <form action="/index/post/match" method="post">
                 {{ csrf_field() }}
                 <input type="hidden" value="{{$post->id}}" name="post_id"> 
-                <input type="hidden" value="{{$post->user_id}}" name="opp_id">
+                <input type="hidden" value="{{$post->user_id}}" name="opp_id">             
                 <input type="submit" value="チャットする">
             </form>
         </div>
+        @else
+            <div class="matching">
+                <form action="/post/match/list" method="get">
+                    {{ csrf_field() }}
+                    <input type="hidden" value="{{$post->id}}" name="post_id"> 
+                    <input type="hidden" value="{{$post->user_id}}" name="opp_id">
+                    <input type="submit" value="マッチング一覧">  
+                </form>
+            </div>
+        @endif
     </div>
 @endsection
 

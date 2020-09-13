@@ -22,6 +22,10 @@
                     <a href="/signUp">新規登録</a>
                 </div>
             @else
+                <div class="header_right_item">
+                    <a href="/post/mine">自分の投稿</a>
+                </div>
+
                  <div class="header_right_item">
                     <a href="/logout">ログアウト</a>
                 </div>
@@ -31,7 +35,6 @@
     @yield('content')
 
     <script src="{{ mix('js/app.js') }}"></script>
-    <script src="{{asset('js/jquery.js')}}"></script>
     <script src="{{asset('js/axios.min.js')}}"></script>
 </body>
 </html>

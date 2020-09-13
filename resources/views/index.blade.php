@@ -5,14 +5,22 @@
         <h1>{{ $page_title }}</h1>
         <div class="post_wrapper">
             @foreach($posts as $post)
-                <div class="post_item">
-                    <a href="/index/post/detail?id={{$post->id}}"><span class="post_title">{{ $post->post_title }}</span> host : {{ $post->name }}</a>
-                </div>
+                @if($page_type=="other")
+                    <div class="post_item">
+                        <a href="/index/post/detail/{{$post->id}}"><span class="post_title">{{ $post->post_title }}</span>host : {{ $post->name }}</a>
+                    </div>
+                @else
+                    <div class="post_item">
+                        <a href="/index/post/detail/mine/{{$post->id}}"><span class="post_title">{{ $post->post_title }}</span></a>
+                    </div>
+                @endif
             @endforeach
         </div>
-        <div class="post">
-            <a href="/index/post">投稿する</a>
-        </div>
+        @if($page_type == "mine")
+            <div class="post">
+                <a href="/index/post">投稿する</a>
+            </div>
+        @endif
     </div>
 @endsection
 
@@ -50,6 +58,6 @@
     .post_title{
         font-size:22px;
         font-weight:bold;
-        padding:10%;
+        padding:0 10%;
     }
 </style>

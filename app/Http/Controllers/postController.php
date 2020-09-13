@@ -15,6 +15,7 @@ class postController extends Controller
         return view('index')
         ->with('loginInfo', $loginInfo)
         ->with('page_title', "投稿一覧")
+        ->with('page_type', 'other')
         ->with('posts', $posts);
     }
 
@@ -32,15 +33,39 @@ class postController extends Controller
         $data['user_id'] = $loginInfo['user_id'];
 
         Post::insertPost($data);
-        return redirect('/index');
+        return redirect('/post/mine');
     }
 
     public function post_detail(Request $request){
-        
+        $loginInfo = session('loginInfo');
         $post_id = $request->id;
         $post = Post::getById($post_id);
 
         return view('post_detail')
+            ->with('type', 'other')
+            ->with('loginInfo', $loginInfo)
             ->with('post', $post);
+    }
+
+    public function post_detail_mine(Request $request){
+        $loginInfo = session('loginInfo');
+        $post_id = $request->id;
+        $post = Post::getById($post_id);
+
+        return view('post_detail')
+            ->with('type', 'mine')
+            ->with('loginInfo', $loginInfo)
+            ->with('post', $post);
+    }
+
+    public function post_mine(){
+        $loginInfo = session('loginInfo');
+        $posts = Post::getPosts($loginInfo['user_id'], "mine");
+
+        return view('index')
+        ->with('loginInfo', $loginInfo)
+        ->with('page_title', "自分の投稿")
+        ->with('page_type', 'mine')
+        ->with('posts', $posts);
     }
 }

@@ -12,7 +12,7 @@ class Post extends Model
             ->insert($data);
     }
 
-    public static function getPosts($user_id){
+    public static function getPosts($user_id, $type="other"){
         $select = "
             posts.id,
             posts.post_title,
@@ -20,11 +20,21 @@ class Post extends Model
             posts.user_id,
             users.name
         ";
-        $posts = DB::table('posts')
+
+        if($type == "other"){
+            $posts = DB::table('posts')
             ->join('users', 'users.id', '=', 'posts.user_id')
             ->select(DB::raw($select))
             ->where('user_id', '!=', $user_id)
             ->get();
+        }else if($type =="mine"){
+            $posts = DB::table('posts')
+            ->join('users', 'users.id', '=', 'posts.user_id')
+            ->select(DB::raw($select))
+            ->where('user_id', $user_id)
+            ->get();
+        }
+        
         
         return $posts;
     }

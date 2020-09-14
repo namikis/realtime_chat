@@ -1,0 +1,48 @@
+.item_me span{
+    background-color: aquamarine;
+    
+    right:0
+}
+.item_you span{
+    background-color: bisque;
+}
+
+.item_me{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.chat_item span{
+    border-radius:8px;
+    padding:5px 10px;
+}
+
+.chat_wrapper{
+    width:80%;
+    margin:0 auto;
+}
+
+.chat_container{
+    border:2px solid lightgray;
+    margin-top:8px;
+}
+
+.chat_item{
+    margin-top:20px;
+}
+
+.chat_items{
+    padding:20px 50px;
+    min-height:500px;
+}
+
+.chat_input{
+    margin-top:20px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 10px;
+    background-color: aquamarine;
+}
+
+.chat_input input{
+}

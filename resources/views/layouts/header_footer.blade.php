@@ -22,8 +22,9 @@
                     <a href="/signUp">新規登録</a>
                 </div>
             @else
+
                 <div class="header_right_item">
-                    <a href="/post/mine">自分の投稿</a>
+                    <a href="/post/mine">{{ $loginInfo['user_name'] }}</a>
                 </div>
 
                  <div class="header_right_item">

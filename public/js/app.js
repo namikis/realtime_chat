@@ -1981,8 +1981,8 @@ __webpack_require__.r(__webpack_exports__);
     this.loginInfo = JSON.parse(this.login_info);
     this.roomId = JSON.parse(this.room_id);
     this.oppId = JSON.parse(this.opp_id);
-    this.getText(); //this.reload();
-    //setTimeout(this.goBottomFirst, 1000);
+    this.getText();
+    this.reload(); //setTimeout(this.goBottomFirst, 1000);
   },
   updated: function updated() {}
 });

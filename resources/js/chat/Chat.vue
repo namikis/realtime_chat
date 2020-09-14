@@ -70,7 +70,7 @@ export default {
         this.oppId = JSON.parse(this.opp_id);
 
         this.getText();
-        //this.reload();
+        this.reload();
         //setTimeout(this.goBottomFirst, 1000);
     }
     ,updated(){

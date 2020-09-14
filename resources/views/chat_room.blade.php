@@ -1,5 +1,8 @@
 @extends('layouts/header_footer')
 @section('content')
+
+<link rel="stylesheet" href="{{ asset('css/chat.css') }}">
+
     <div class="container">
         <div class="chat_wrapper">
             <h2>{{ $user->name }} -> {{ $opp->name }}</h2>
@@ -15,12 +18,3 @@
         </div>
     </div>
 @endsection
-
-<style>
-    .item_me span{
-        color:red;
-    }
-    .item_you span{
-        color:blue;
-    }
-</style>
